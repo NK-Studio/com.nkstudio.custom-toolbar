@@ -1,0 +1,27 @@
+{
+    "name": "NKStudio.CustomToolbar.FMOD.Editor",
+    "rootNamespace": "NKStudio.CustomToolbar.FMOD",
+    "references": [
+        "GUID:e703b68e571d04b4e8a3adf397f20513",
+        "GUID:0c752da273b17c547ae705acf0f2adf2"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "FMOD_PRESENT"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.firelight.fmod-for-unity",
+            "expression": "[2.2.0,3.0.0)",
+            "define": "FMOD_PRESENT"
+        }
+    ],
+    "noEngineReferences": false
+}

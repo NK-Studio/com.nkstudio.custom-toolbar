@@ -1,0 +1,29 @@
+{
+    "name": "NKStudio.CustomToolbar.Editor.Tests",
+    "rootNamespace": "NKStudio.CustomToolbar.Tests",
+    "references": [
+        "GUID:e703b68e571d04b4e8a3adf397f20513"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "CUSTOM_TOOLBAR_TESTS"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.test-framework",
+            "expression": "[1.1.0,3.0.0)",
+            "define": "CUSTOM_TOOLBAR_TESTS"
+        }
+    ],
+    "noEngineReferences": false
+}

@@ -1,0 +1,28 @@
+{
+    "name": "NKStudio.CustomToolbar.Localization.Editor",
+    "rootNamespace": "NKStudio.CustomToolbar.Localization",
+    "references": [
+        "GUID:e703b68e571d04b4e8a3adf397f20513",
+        "Unity.Localization",
+        "Unity.Localization.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "USE_LOCALIZATION"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.localization",
+            "expression": "[1.0.0,2.0.0)",
+            "define": "USE_LOCALIZATION"
+        }
+    ],
+    "noEngineReferences": false
+}

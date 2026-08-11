@@ -1,0 +1,4 @@
+interface:
+  display_name: "Extend Custom Toolbar"
+  short_description: "Generate Unity-version-aware toolbar modules"
+  default_prompt: "Use $extend-custom-toolbar to add a toolbar module that matches this Unity project version."
