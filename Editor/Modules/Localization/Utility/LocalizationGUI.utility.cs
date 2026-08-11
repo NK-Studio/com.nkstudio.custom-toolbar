@@ -20,7 +20,7 @@ namespace NKStudio.CustomToolbar.Localization
         private static Texture2D LoadLocaleIcon()
         {
             return AssetDatabase.LoadAssetAtPath<Texture2D>(
-                $"Packages/com.unity.localization/Editor/Icons/Locale/{ToolbarUtility.DarkModePrefix}Locale.png");
+                $"Packages/com.unity.localization/Editor/Icons/Locale/{ToolbarStyleUtility.DarkModePrefix}Locale.png");
         }
 
         private static void ShowLocaleMenu(Rect rect)

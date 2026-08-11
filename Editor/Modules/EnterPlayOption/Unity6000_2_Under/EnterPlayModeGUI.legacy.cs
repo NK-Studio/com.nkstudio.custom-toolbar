@@ -32,7 +32,7 @@ namespace NKStudio.CustomToolbar
             if (_toggle != null)
             {
                 _toggle.SetValueWithoutNotify(EditorSettings.enterPlayModeOptionsEnabled);
-                _toggle.SetEnabled(ToolbarUtility.IsNotPlaying);
+                _toggle.SetEnabled(ToolbarAvailability.InEditMode);
             }
 #endif
         }
@@ -56,11 +56,11 @@ namespace NKStudio.CustomToolbar
             icon.style.width = 16;
             icon.style.height = 16;
             string iconPath = AssetDatabase.GUIDToAssetPath("c0b301a9175a74304992d875f40f670d");
-            icon.image = AssetDatabase.LoadAssetAtPath<Texture2D>($"{iconPath}/{ToolbarUtility.DarkModePrefix}rush.png");
+            icon.image = AssetDatabase.LoadAssetAtPath<Texture2D>($"{iconPath}/{ToolbarStyleUtility.DarkModePrefix}rush.png");
             toggle[0].Insert(0, icon);
 
 #if !UNITY_6000
-            ToolbarUtility.Apply2022ButtonStyle(toggle);
+            ToolbarStyleUtility.Apply2022ButtonStyle(toggle);
 #endif
 
             VisualElement checkmark = toggle[0].Q<VisualElement>("unity-checkmark");
@@ -77,7 +77,7 @@ namespace NKStudio.CustomToolbar
                 label.style.marginRight = 4;
             }
 
-            toggle.SetEnabled(ToolbarUtility.IsNotPlaying);
+            toggle.SetEnabled(ToolbarAvailability.InEditMode);
             toggle.RegisterValueChangedCallback(evt => EditorSettings.enterPlayModeOptionsEnabled = evt.newValue);
             builder.Add(LegacyToolbarZone.Left, toggle);
             _toggle = toggle;

@@ -18,7 +18,7 @@ namespace NKStudio.CustomToolbar
             return new MainToolbarButton(content, SceneHelper.MoveFirstScene)
             {
                 displayed = CustomToolbarSettings.instance.ShowSceneSwitcher,
-                enabled = ToolbarUtility.IsNotPlaying && SceneHelper.HasFirstScene
+                enabled = ToolbarAvailability.InEditMode && SceneHelper.HasFirstScene
             };
         }
 
@@ -29,7 +29,7 @@ namespace NKStudio.CustomToolbar
             return new MainToolbarDropdown(content, SceneHelper.ShowSceneMenu)
             {
                 displayed = CustomToolbarSettings.instance.ShowSceneSwitcher,
-                enabled = ToolbarUtility.IsNotPlaying
+                enabled = ToolbarAvailability.InEditMode
             };
         }
     }

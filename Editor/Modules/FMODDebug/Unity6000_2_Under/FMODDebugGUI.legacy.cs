@@ -32,7 +32,7 @@ namespace NKStudio.CustomToolbar.FMOD
             if (_toggle != null)
             {
                 _toggle.SetValueWithoutNotify(IsFmodDebugActive);
-                _toggle.SetEnabled(ToolbarUtility.IsNotPlaying);
+                _toggle.SetEnabled(ToolbarAvailability.InEditMode);
             }
 #endif
         }
@@ -62,11 +62,11 @@ namespace NKStudio.CustomToolbar.FMOD
 #endif
             icon.style.alignSelf = Align.Center;
             string iconPath = AssetDatabase.GUIDToAssetPath("f0de615af202e44a190b20daca134fc4");
-            icon.image = AssetDatabase.LoadAssetAtPath<Texture2D>($"{iconPath}/{ToolbarUtility.DarkModePrefix}fmod.png");
+            icon.image = AssetDatabase.LoadAssetAtPath<Texture2D>($"{iconPath}/{ToolbarStyleUtility.DarkModePrefix}fmod.png");
             toggle[0].Insert(0, icon);
 
 #if !UNITY_6000
-            ToolbarUtility.Apply2022ButtonStyle(toggle);
+            ToolbarStyleUtility.Apply2022ButtonStyle(toggle);
 #endif
 
             VisualElement checkmark = toggle[0].Q<VisualElement>("unity-checkmark");
@@ -83,7 +83,7 @@ namespace NKStudio.CustomToolbar.FMOD
                 label.style.marginRight = 4;
             }
 
-            toggle.SetEnabled(ToolbarUtility.IsNotPlaying);
+            toggle.SetEnabled(ToolbarAvailability.InEditMode);
             toggle.RegisterValueChangedCallback(evt => SetFmodDebugOverlay(evt.newValue));
             builder.Add(LegacyToolbarZone.Left, toggle);
             _toggle = toggle;

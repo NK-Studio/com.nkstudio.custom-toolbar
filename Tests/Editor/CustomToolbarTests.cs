@@ -75,10 +75,14 @@ namespace NKStudio.CustomToolbar.Tests
         }
 
         [Test]
-        public void PlayModeAvailability_MatchesEditorState()
+        public void ToolbarAvailability_MatchesEditorState()
         {
-            Assert.That(ToolbarUtility.IsNotPlaying,
+            Assert.That(ToolbarAvailability.InEditMode,
                 Is.EqualTo(!EditorApplication.isPlayingOrWillChangePlaymode));
+            Assert.That(ToolbarAvailability.InPlayMode,
+                Is.EqualTo(EditorApplication.isPlaying));
+            Assert.That(ToolbarAvailability.Always, Is.True);
+            Assert.That(ToolbarAvailability.Never, Is.False);
         }
 
         private sealed class FakeModule : IToolbarModule

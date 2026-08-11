@@ -37,10 +37,10 @@ namespace NKStudio.CustomToolbar
             if (_firstSceneButton != null)
             {
                 _firstSceneButton.text = $"Start '{SceneHelper.FirstSceneName}'";
-                _firstSceneButton.SetEnabled(ToolbarUtility.IsNotPlaying && SceneHelper.HasFirstScene);
+                _firstSceneButton.SetEnabled(ToolbarAvailability.InEditMode && SceneHelper.HasFirstScene);
             }
 
-            _sceneDropdown?.SetEnabled(ToolbarUtility.IsNotPlaying);
+            _sceneDropdown?.SetEnabled(ToolbarAvailability.InEditMode);
 #endif
         }
 
@@ -62,7 +62,7 @@ namespace NKStudio.CustomToolbar
             };
             firstSceneButton.style.marginRight = 3;
             firstSceneButton.style.unityTextAlign = TextAnchor.MiddleCenter;
-            firstSceneButton.SetEnabled(ToolbarUtility.IsNotPlaying && SceneHelper.HasFirstScene);
+            firstSceneButton.SetEnabled(ToolbarAvailability.InEditMode && SceneHelper.HasFirstScene);
 
             var sceneDropdown = new EditorToolbarDropdown
             {
@@ -70,7 +70,7 @@ namespace NKStudio.CustomToolbar
                 text = "씬 선택 이동"
             };
             sceneDropdown.style.marginLeft = 3;
-            sceneDropdown.SetEnabled(ToolbarUtility.IsNotPlaying);
+            sceneDropdown.SetEnabled(ToolbarAvailability.InEditMode);
             sceneDropdown.clicked += () => SceneHelper.ShowSceneMenu(sceneDropdown);
 
             builder.Add(LegacyToolbarZone.CenterLeft, firstSceneButton);
