@@ -43,7 +43,7 @@ internal sealed class OpenProjectFolderToolbarModule : IToolbarModule
 
         return new MainToolbarButton(content, OpenProjectFolder)
         {
-            enabled = ToolbarUtility.IsNotPlaying
+            enabled = ToolbarAvailability.InEditMode
         };
     }
 

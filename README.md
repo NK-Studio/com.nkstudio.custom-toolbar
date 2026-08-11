@@ -97,6 +97,9 @@ Unity 2022.3~6.2에서도 UI를 제공해야 하는 모듈은 `ILegacyToolbarMod
 
 중복된 모듈 ID는 구성 오류로 처리됩니다. 모듈 내부에서 `playModeStateChanged`나 `sceneListChanged`를 다시 구독하지 말고 전달된 `ToolbarRefreshReason`을 사용해야 합니다.
 
+> **팁 — Play Mode에 따른 활성 상태 갱신**
+> `ModernToolbarHost`는 Play Mode 상태가 변경될 때 등록된 모든 모듈에 `ToolbarRefreshReason.PlayModeChanged`를 전달합니다. 따라서 모듈을 `ToolbarModuleRegistry`에 등록했다면 `EditorApplication.playModeStateChanged`를 별도로 구독하지 않아도 됩니다. `Refresh`에서 `MainToolbar.Refresh(path)`를 호출하면 요소가 다시 생성되고, `enabled = ToolbarAvailability.InEditMode` 또는 `InPlayMode`가 현재 상태로 다시 평가됩니다. 반대로 `ToolbarAvailability.Always`와 `Never`는 Play Mode에 따라 값이 변하지 않으므로, 다른 동적 상태가 없다면 `PlayModeChanged`만을 위한 재생성은 필요하지 않습니다.
+
 ## 구조
 
 ```text

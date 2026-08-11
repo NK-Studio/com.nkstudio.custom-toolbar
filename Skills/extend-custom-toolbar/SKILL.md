@@ -39,7 +39,7 @@ Do not edit `Packages/com.nkstudio.custom-toolbar` for a project-specific featur
 - Implement `IToolbarModule.Refresh(ToolbarRefreshReason)` instead of subscribing to `EditorApplication.playModeStateChanged` or `EditorBuildSettings.sceneListChanged` inside the module.
 - Never use anonymous Editor lifecycle subscriptions to update toolbar state.
 - Keep module actions Editor-only and place source under an Editor folder or Editor-only asmdef.
-- Use `ToolbarUtility.IsNotPlaying` for edit-only controls.
+- Use `ToolbarAvailability.InEditMode` for edit-only controls.
 - Do not add the external module to `CustomToolbarSettings`; manage feature-specific settings separately unless changing the distributed package itself.
 - Preserve existing package public APIs. Do not change the registry merely to add one module.
 
