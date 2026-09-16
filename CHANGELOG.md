@@ -2,6 +2,26 @@
 
 이 문서는 [Keep a Changelog](https://keepachangelog.com/ko/1.1.0/) 형식을 따르며 버전은 [Semantic Versioning](https://semver.org/)을 사용합니다.
 
+## [2.1.0] - 2026-09-16
+
+### Added
+
+- Time Scale 슬라이더 오른쪽에 현재 값 라벨 표시 (Unity 2022.3~6.2)
+- 값 라벨 더블 클릭으로 Reset 값 적용, 마우스를 올리면 링크 커서 표시
+
+### Changed
+
+- Time Scale 슬라이더 전체 폭을 190px에서 160px로 축소
+- `ToolbarStyleUtility.ApplyStyleSheet`를 분리해 `unity-toolbar-frame` 클래스 없이 스타일시트만 적용 가능
+
+### Fixed
+
+- Unity 6.0에서 Time Scale 슬라이더 라벨의 기본 `min-width`(120px)가 트랙을 20px까지 짓눌러, 슬라이더 내부 요소가 툴바 밖 Unity 기본 버튼 위로 겹쳐 그려지던 문제
+
+### Removed
+
+- Time Scale 슬라이더의 숫자 입력 필드 (Unity 6.0 툴바 패널에서 편집 가능 텍스트가 흰 박스로 렌더링되는 문제 회피, 값은 우측 라벨로 확인)
+
 ## [2.0.0] - 2026-08-11
 
 ### Added

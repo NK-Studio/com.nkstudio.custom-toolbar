@@ -20,3 +20,7 @@
     color: rgb(9, 9, 9);
     background-color: rgb(105, 105, 105);
 }
+
+.nk-toolbar-clickable {
+    cursor: link;
+}

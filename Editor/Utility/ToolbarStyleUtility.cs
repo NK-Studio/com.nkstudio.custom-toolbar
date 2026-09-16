@@ -12,13 +12,18 @@ namespace NKStudio.CustomToolbar
 
         public static void Apply2022ButtonStyle(VisualElement element)
         {
+            ApplyStyleSheet(element);
+            element.AddToClassList("unity-toolbar-frame");
+        }
+
+        public static void ApplyStyleSheet(VisualElement element)
+        {
             string path = AssetDatabase.GUIDToAssetPath(EditorGUIUtility.isProSkin
                 ? ToolbarDarkStyleSheetPathGuid
                 : ToolbarLightStyleSheetPathGuid);
 
             var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(path);
             element.styleSheets.Add(styleSheet);
-            element.AddToClassList("unity-toolbar-frame");
         }
     }
 }

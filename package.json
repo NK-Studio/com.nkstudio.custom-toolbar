@@ -1,7 +1,7 @@
 {
   "name": "com.nkstudio.custom-toolbar",
   "displayName": "Custom Toolbar",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "unity": "2022.3",
   "description": "A modular Unity Editor toolbar extension with scene switching, Enter Play Mode options, time scale controls, and optional FMOD and Localization integrations.",
   "keywords": [
